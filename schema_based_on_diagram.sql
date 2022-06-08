@@ -47,8 +47,10 @@ ON invoice_items(treatment_id);
 
 CREATE TABLE m_histories_treatments (
     id serial PRIMARY KEY,
+
     medical_history_id int REFERENCES medical_histories(id),
-    treatment_id int REFERENCES treatments(id)
+    treatment_id int REFERENCES treatments(id),
+    patient_id REFERENCES patients(id)
 );
 
 CREATE INDEX idx_medical_history_id
